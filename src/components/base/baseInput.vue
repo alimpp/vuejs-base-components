@@ -12,10 +12,11 @@
     <input
       ref="input"
       class="form-control px-4"
-      :class="{ error: hasError , disbaled_input: disabledInput }"
+      :class="{ error: hasError, disbaled_input: disabledInput }"
       :type="type"
       :placeholder="placeholder"
       :value="modelValue"
+      :style="{ 'border-radius': borderRadius }"
       @input="$emit('update:modelValue', $event.target.value)"
     />
   </div>
@@ -69,6 +70,11 @@ const props = defineProps({
     default: "",
   },
   icon: {
+    type: String,
+    default: "",
+    required: false,
+  },
+  borderRadius: {
     type: String,
     default: "",
     required: false,
